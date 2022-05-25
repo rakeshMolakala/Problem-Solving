@@ -11,15 +11,16 @@ class Solution {
             int currStart = intervals[i][0];
             int currEnd = intervals[i][1];
             
+            // If the curr interval and prev interval is not overlapping, we add the prev interval to result.
             if(prevEnd<currStart){
                 res.add(prevInterval);
                 prevInterval = intervals[i];
             }
+            
+            // If they are overlapping, we will merge them and change our prev interval to merged interval
             else{
-                int newStart = Math.min(prevStart,currStart);
-                int newEnd = Math.max(prevEnd,currEnd);
-                prevInterval[0] = newStart;
-                prevInterval[1] = newEnd;
+                prevInterval[0] = Math.min(prevStart,currStart);
+                prevInterval[1] = Math.max(prevEnd,currEnd);
             }
         }
         
