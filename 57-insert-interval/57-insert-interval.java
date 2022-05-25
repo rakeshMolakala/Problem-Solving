@@ -13,23 +13,22 @@ class Solution {
             int newStart = newInterval[0];
             int newEnd = newInterval[1];
             
-            int tempStart = intervals[i][0];
-            int tempEnd = intervals[i][1];
+            int currStart = intervals[i][0];
+            int currEnd = intervals[i][1];
             
-            if(newEnd<tempStart){
+            if(newEnd<currStart){
                 res.add(newInterval);
                 res.add(intervals[i]);
                 intervalAdded = true;
             }
             
-            else if(newStart>tempEnd){
+            else if(newStart>currEnd){
                 res.add(intervals[i]);
             }
              
             else{
-                newInterval[0] = Math.min(newStart,tempStart);
-                newInterval[1] = Math.max(newEnd,tempEnd);
-                System.out.println(newInterval[1]);
+                newInterval[0] = Math.min(newStart,currStart);
+                newInterval[1] = Math.max(newEnd,currEnd);
             }
         }
         
