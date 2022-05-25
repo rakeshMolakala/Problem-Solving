@@ -34,7 +34,6 @@ class Solution {
             result[i] = res.get(i);
         }
         
-        
         return result;
         
     }
