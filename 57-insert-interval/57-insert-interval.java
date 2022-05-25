@@ -20,12 +20,10 @@ class Solution {
                 res.add(newInterval);
                 res.add(intervals[i]);
                 intervalAdded = true;
-                continue;
             }
             
             else if(newStart>tempEnd){
                 res.add(intervals[i]);
-                continue;
             }
              
             else{
