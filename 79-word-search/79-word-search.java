@@ -3,7 +3,6 @@ class Solution {
     private int[][] direc = {{0,1},{1,0},{-1,0},{0,-1}};
     private int l = 0;
     private int b = 0;
-    private boolean res = false;
     private char[][] board = null;
     
     public boolean exist(char[][] board, String word) {
@@ -38,10 +37,7 @@ class Solution {
                     found = true;
                     break;
                 }
-                
-            }
-                   
-            
+            }  
         }
                    
         if(found){
