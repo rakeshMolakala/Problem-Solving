@@ -13,8 +13,8 @@ class Solution {
         
         for(int i =0;i<l;i++){
             for (int j=0;j<b;j++){
-                if(search(i,j,0,word)){
-                    return true;
+                if(board[i][j]==word.charAt(0) && search(i,j,1,word)){
+                    return true; 
                 }
             }
         }
@@ -24,10 +24,7 @@ class Solution {
     
     public boolean search(int r,int c,int index, String word){
         
-        if(board[r][c]!=word.charAt(index) || index==word.length()){
-            return false;
-        }
-        if(index==word.length()-1){
+        if(index==word.length()){
             return true;
         }
         
@@ -36,7 +33,7 @@ class Solution {
         for(int i =0;i<direc.length;i++) {
             int tempx = r+direc[i][0];
             int tempy = c+direc[i][1];
-            if(tempx>=0 && tempx<l && tempy>=0 && tempy<b) {
+            if(tempx>=0 && tempx<l && tempy>=0 && tempy<b && board[tempx][tempy]==word.charAt(index)) {
                 if(search(tempx,tempy,index+1,word)){
                     found = true;
                     break;
@@ -50,7 +47,7 @@ class Solution {
         if(found){
             return true;
         }
-        board[r][c] = word.charAt(index);
+        board[r][c] = word.charAt(index-1);
         return false;
                              
     }
