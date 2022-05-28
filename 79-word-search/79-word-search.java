@@ -39,12 +39,9 @@ class Solution {
                 }
             }  
         }
-                   
-        if(found){
-            return true;
-        }
+              
         board[r][c] = word.charAt(index-1);
-        return false;
+        return found;
                              
     }
                    
