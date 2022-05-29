@@ -25,16 +25,12 @@ class Solution {
             int size = q.size();
             for(int i =0;i<size;i++){
                 int[] curr = q.poll();
-                System.out.println(curr[0]);
-                System.out.println(curr[1]);
-                
                 for(int j =0;j<direc.length;j++){
                     int tempx = curr[0]+direc[j][0];
                     int tempy = curr[1]+direc[j][1];
                     if(tempx<0 || tempx>=n || tempy<0 || tempy>=n || grid[tempx][tempy]==2){
                         continue;
                     }
-                    
                     if(grid[tempx][tempy]==1){
                         return res;
                     }
@@ -43,7 +39,6 @@ class Solution {
                 }                
             }
             res++;
-            
         }
         return res;
         
