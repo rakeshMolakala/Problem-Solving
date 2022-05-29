@@ -10,13 +10,11 @@ class Solution {
             for(int j=0;j<n;j++){
                 if(grid[i][j]==1){
                     dfs(i,j,grid);
-                    
                     return bfs(grid);
                 }
             }
         }
         return 0;
-        
     }
     
     public int bfs(int[][] grid){
@@ -41,7 +39,6 @@ class Solution {
             res++;
         }
         return res;
-        
     }
     
     
@@ -51,9 +48,8 @@ class Solution {
         }
         grid[r][c]=2;
         q.add(new int[]{r,c});
-        dfs(r+1,c,grid);
-        dfs(r,c+1,grid);
-        dfs(r-1,c,grid);
-        dfs(r,c-1,grid);
+        for(int i=0;i<4;i++){
+            dfs(r+direc[i][0],c+direc[i][1],grid);
+        }
     }
 }
