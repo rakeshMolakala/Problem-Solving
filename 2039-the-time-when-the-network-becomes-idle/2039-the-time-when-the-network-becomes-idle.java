@@ -22,6 +22,7 @@ class Solution {
         }
         
         int[] time = new int[n];
+        int res = 0;
         
         int[] dist = new int[n];
         dist[0] = 0;
@@ -59,7 +60,11 @@ class Solution {
                         }
                         int lastPacketTime = packets*patience[currCon];
                         time[currCon] = lastPacketTime + transTime;
-                    }    
+                    }
+                    if(time[currCon]>res){
+                        res = time[currCon];
+                    }
+                    
                     
                 }
             }
@@ -81,12 +86,13 @@ class Solution {
         //     }    
         // }
         
-        int res = 0;
-        for(int i = 0;i<n;i++){
-            if(time[i]>res){
-                res = time[i];
-            }
-        }
+        // int res = 0;
+        // for(int i = 0;i<n;i++){
+        //     if(time[i]>res){
+        //         res = time[i];
+        //     }
+        // }
+        
         return res+1;
         
         
