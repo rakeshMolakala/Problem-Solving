@@ -24,6 +24,7 @@ class Solution {
         int[] time = new int[n];
         int res = 0;
         
+        // Now we do BFS to find shortest path from source to every other node
         int[] dist = new int[n];
         dist[0] = 0;
                 
@@ -46,30 +47,11 @@ class Solution {
                     visited.add(currCon);
                     q.add(currCon);
                     dist[currCon] = currDist+1;
-                    
-//                     // Calculating time for every node
-                    
-//                     int transTime = dist[currCon]*2;
-//                     if(transTime<=patience[currCon]){
-//                         time[currCon] = transTime;
-//                     }
-//                     else{
-//                         int packets = transTime/patience[currCon];
-//                         if(transTime%patience[currCon]==0){
-//                             packets = packets - 1;
-//                         }
-//                         int lastPacketTime = packets*patience[currCon];
-//                         time[currCon] = lastPacketTime + transTime;
-//                     }
-//                     if(time[currCon]>res){
-//                         res = time[currCon];
-//                     }
-                    
-                    
                 }
             }
         }
         
+        //Now we calcuate time taken for each node to relax by using the shortest distance found above
         time[0] = 0;
         for(int i =0;i<n;i++){
             int transTime = dist[i]*2;
