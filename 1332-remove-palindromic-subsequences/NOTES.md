@@ -1,1 +1,1 @@
-​
+As the question asked for Subsequence, it is an easy one, as the stirng contains only a or b, any possible combination can have maximum of subsequence of a and subsequence of b, so we can remove those subsequences in 2 steps. If they are same a or same b through out the string, the answer is 1. If the initial string is a palindrome the answer is 1 too and sec0nd case also holds this claim.
