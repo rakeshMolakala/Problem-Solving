@@ -7,7 +7,7 @@ class Solution {
             if(p2<0){
                 break;
             }
-            if(p1>=0 && (nums1[p1]>nums2[p2])){
+            if(p1>=0 && nums1[p1]>nums2[p2]){
                 nums1[p] = nums1[p1];
                 p1--;
             }
