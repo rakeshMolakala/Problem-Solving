@@ -4,10 +4,9 @@ class Solution {
             return s.length();
         }
         Map<Character,Integer> map = new HashMap<>();
-        int res = 1;
         int start = 0;
-        map.put(s.charAt(0),0);
-        for(int i =1;i<s.length();i++){
+        int res =0;
+        for(int i =0;i<s.length();i++){
             if(map.containsKey(s.charAt(i)) && map.get(s.charAt(i))>=start){
                 start = map.get(s.charAt(i))+1;   
             }
