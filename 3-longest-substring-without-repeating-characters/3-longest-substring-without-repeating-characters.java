@@ -12,12 +12,9 @@ class Solution {
             }
             else{
                 res = Math.max(res,i-start+1);
-                System.out.println(res);
             }
             
-            map.put(s.charAt(i),i);
-            
-            
+            map.put(s.charAt(i),i);            
         }
         
         return res;
