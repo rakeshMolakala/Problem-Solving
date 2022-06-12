@@ -7,15 +7,15 @@ class Solution {
             prefsum[i] = nums[i] +prefsum[i-1];
         }        
         int start = 0;
-        int res2 = 0;
+        int res = 0;
         for(int i =0;i<nums.length;i++){
             if(map.containsKey(nums[i]) && start<=map.get(nums[i])) {
                 start = map.get(nums[i]) + 1;
             }
             map.put(nums[i],i);
             int currSum = prefsum[i] - prefsum[start] + nums[start];
-            res2 = Math.max(currSum,res2);
+            res = Math.max(currSum,res);
         }
-        return res2;
+        return res;
     }
 }
