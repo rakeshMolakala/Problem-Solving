@@ -11,12 +11,7 @@ class Solution {
         if(target==0){
             return nums.length;
         }
-//         int[] psum = new int[nums.length];
-//         for(int i =1;i<nums.length;i++){
-//             psum[i]=psum[i-1]+nums[i];
-//         }
-        
-        
+
         int i=0;
         int j=0;
         int temp =0;
