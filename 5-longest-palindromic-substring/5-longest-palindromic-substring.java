@@ -33,13 +33,13 @@ class Solution {
         String ans = "";
         int n = s.length();
         int[][] dp = new int[s.length()][s.length()];
-        for(int i=0;i<s.length();i++){
+        for(int i=0;i<n;i++){
             Arrays.fill(dp[i],-1);
         }
         
         for(int i =0;i<n;i++){
             for(int j=i;j<n;j++){
-                if(isPalindrome(s,i,j,dp)){
+                if(isPalindrome(s,i,j,dp)==1){
                     if(j-i+1>ans.length()){
                         ans = s.substring(i,j+1);
                     }
@@ -49,26 +49,26 @@ class Solution {
         return ans;
     }
     
-    public boolean isPalindrome(String s,int i,int j,int[][] dp){
+    public int isPalindrome(String s,int i,int j,int[][] dp){
         if(j-i==0){
-            return true;
+            return 1;
         }
-        if(j-i==1 || j-i==2){
-            return s.charAt(i)==s.charAt(j);
+        if(j-i<=2){
+            if(s.charAt(i)==s.charAt(j)){
+                return 1;
+            }
+            return 0;
         }
         if(dp[i][j]!=-1){
-            if(dp[i][j]==0){
-                return false;
-            }
-            return true;
+            return dp[i][j];
         }
-        boolean temp = (isPalindrome(s,i+1,j-1,dp)) && (s.charAt(i)==s.charAt(j));
+        boolean temp = (isPalindrome(s,i+1,j-1,dp)==1) && (s.charAt(i)==s.charAt(j));
         if(temp){
             dp[i][j]=1;
         }
         else{
             dp[i][j]=0;
         }
-        return temp;
+        return dp[i][j];
     }
 }
