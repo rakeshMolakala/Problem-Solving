@@ -30,18 +30,17 @@
 
 class Solution {
     public String longestPalindrome(String s) {
-        int res = 0;
         String ans = "";
+        int n = s.length();
         int[][] dp = new int[s.length()][s.length()];
         for(int i=0;i<s.length();i++){
             Arrays.fill(dp[i],-1);
         }
         
-        for(int i =0;i<s.length();i++){
-            for(int j=i;j<s.length();j++){
+        for(int i =0;i<n;i++){
+            for(int j=i;j<n;j++){
                 if(isPalindrome(s,i,j,dp)){
-                    if(j-i+1>res){
-                        res = j-i+1;
+                    if(j-i+1>ans.length()){
                         ans = s.substring(i,j+1);
                     }
                 }
