@@ -28,7 +28,7 @@ class Trie {
         curr.wordEnd = true;
     }
     
-    public boolean startsWith(String prefix) {
+    public boolean isPrefixOfOtherWords(String prefix) {
         TrieNode curr = root;
         
         for(int i = 0; i<prefix.length(); i++){
@@ -54,7 +54,7 @@ class Solution {
             trie.insert(sb.toString());  
         }
         for(String s: set){
-            if(!trie.startsWith(s)){
+            if(!trie.isPrefixOfOtherWords(s)){
                 res = res + s.length()+1;
             }
         }
