@@ -18,10 +18,8 @@ class Solution {
                             nums[i] = nums[i-1];
                         }
                     }
-                    
                     violations++;
                 }
-                
             }
         }
         return true;
