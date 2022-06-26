@@ -20,7 +20,6 @@ class Solution {
             else{
                 if(pq.size()==0){
                     ladders=ladders-1;
-                    res++;
                 }
                 else{
                     if(pq.peek()>=diff){
@@ -31,9 +30,9 @@ class Solution {
                     else{
                         ladders=ladders-1;
                     }
-                    res++;
                 }
             }
+            res++;
             
         }
         return res;
