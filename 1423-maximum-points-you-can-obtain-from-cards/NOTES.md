@@ -1,1 +1,1 @@
-​
+This problem is to find the minimum subarray of length n-k, we can use sliding window algorithm for this.
