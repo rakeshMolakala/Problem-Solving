@@ -12,8 +12,6 @@ class Solution {
             tsum = tsum + cardPoints[i];
         }
         int res = wsum;
-        
-        
         for(int i = 0; i<k; i++){
             wsum = wsum-cardPoints[i]+cardPoints[window+i];
             res = Math.min(wsum,res);
