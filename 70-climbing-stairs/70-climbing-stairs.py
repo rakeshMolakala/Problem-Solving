@@ -1,20 +1,18 @@
 class Solution:
-    
-    cache = dict()
-    
+        
     def climbStairs(self, n: int) -> int:
         cache = dict()
-        return self.recur(0,n,cache)
+        return self.recur(n,cache)
         
         
-    def recur(self,n,t,cache):
+    def recur(self,n,cache):
         if(n in cache):
             return cache[n]
-        if(n==t):
+        if(n==0):
             return 1
-        if(n>t):
-            return 0
-        cache[n] = self.recur(n+1,t,cache)+self.recur(n+2,t,cache)
+        if(n==1):
+            return 1
+        cache[n] = self.recur(n-1,cache)+self.recur(n-2,cache)
         return cache[n]
     
         
