@@ -5,7 +5,6 @@ class Solution:
         def backtrack(i,arr):
             if(i==len(nums)):
                 res.append(arr[:])
-                print(res)
                 return
             arr.append(nums[i])
             backtrack(i+1,arr)
