@@ -21,6 +21,6 @@ class Solution:
             cache[i] = res
             return res
         
-        cache = {}
+        cache = dict()
         return recur(0)
         
