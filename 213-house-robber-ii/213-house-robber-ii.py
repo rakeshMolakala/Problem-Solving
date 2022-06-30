@@ -1,8 +1,6 @@
 class Solution:
     def rob(self, nums: List[int]) -> int:
         
-        
-        
         def hrob(nums):
             prev1 = 0
             prev2 = 0
