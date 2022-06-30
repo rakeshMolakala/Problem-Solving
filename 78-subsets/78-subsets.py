@@ -4,7 +4,7 @@ class Solution:
         
         def backtrack(i,arr):
             if(i==len(nums)):
-                res.append(arr[:])
+                res.append(list(arr))
                 return
             arr.append(nums[i])
             backtrack(i+1,arr)
