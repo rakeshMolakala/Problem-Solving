@@ -1,8 +1,6 @@
 class Solution:
     def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
         
-        
-        
         def backtrack(i,arr):
             if(i>=len(nums)):
                 res.append(arr.copy())
@@ -19,10 +17,6 @@ class Solution:
                     i=i+1
                     
             backtrack(i+1,arr)
-            
-            
-        
-            
             
         nums.sort()
         res=[]
