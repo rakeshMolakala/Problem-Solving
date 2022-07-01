@@ -9,7 +9,6 @@ class Solution:
             
             res = False
             if(i==len(stones)-1):
-                # cache[(i,prev)] = True
                 return True
             
             poss = [prev-1,prev,prev+1]
