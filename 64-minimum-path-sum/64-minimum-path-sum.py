@@ -22,7 +22,6 @@ class Solution:
                     left = left + dp[i-1][j]
                 dp[i][j] = min(up,left)
         
-        print(dp)
         return dp[m-1][n-1]
                 
         
