@@ -73,7 +73,5 @@ class Solution:
             for j in range(1,s+1):
                 if(nums[i-1]<=j):
                     dp[i][j] = (dp[i-1][j-nums[i-1]]) or (dp[i-1][j])
-                # else:
-                #     dp[i][j] = dp[i-1][j]
         return dp[n][s]
         
