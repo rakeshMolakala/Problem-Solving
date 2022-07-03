@@ -1,28 +1,58 @@
 class Solution:
     def canPartition(self, nums: List[int]) -> bool:
         
-        
-        def recur(i,summ):
-            if(summ==target):
+        def recur(i,target):
+            if(target==0):
                 return True;
-            if(i==len(nums) or summ>target):
+            if(i<0 or target<0):
                 return False
-            if(cache[i][summ]!=None):
-                return cache[i][summ]
+            if(cache[i][target]!=None):
+                return cache[i][target]
             
-            p1 = recur(i+1,summ)
-            p2 = recur(i+1,summ+nums[i])
+            p1 = recur(i-1,target)
+            p2 = recur(i-1,target-nums[i])
             res = p1 or p2
             
-            cache[i][summ] = res 
+            cache[i][target] = res 
             return res
         
         total_sum = sum(nums)
         if(total_sum%2!=0):
             return False
-        target = total_sum//2
-        cache = [[None]*(target+1) for _ in range(len(nums)+1)]
-        return recur(0,0)
+        
+        cache = [[None]*((total_sum//2)+1) for _ in range(len(nums)+1)]
+        
+        return recur(len(nums)-1,total_sum//2)
+        
+        
+        
+        
+        
+        
+        
+        
+        
+#         def recur(i,summ):
+#             if(summ==target):
+#                 return True;
+#             if(i==len(nums) or summ>target):
+#                 return False
+#             if(cache[i][summ]!=None):
+#                 return cache[i][summ]
+            
+#             p1 = recur(i+1,summ)
+#             p2 = recur(i+1,summ+nums[i])
+#             res = p1 or p2
+            
+#             cache[i][summ] = res 
+#             return res
+        
+#         total_sum = sum(nums)
+#         if(total_sum%2!=0):
+#             return False
+#         target = total_sum//2
+#         cache = [[None]*(target+1) for _ in range(len(nums)+1)]
+#         return recur(0,0)
         
         
         
