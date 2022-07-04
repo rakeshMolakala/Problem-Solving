@@ -106,7 +106,7 @@ class Solution:
         for i in range(n):
             dp[i][0] = True
         
-        for i in range(0,n):
+        for i in range(1,n):
             for j in range(1,s+1):
                 notTake = dp[i-1][j]
                 take = False
