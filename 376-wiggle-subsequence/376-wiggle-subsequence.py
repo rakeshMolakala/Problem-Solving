@@ -16,10 +16,10 @@ class Solution:
                     p1 = recur(i+1,True,cache)
 
             else:
-                if(nums[i+1]<=nums[i]):
-                    p2 = recur(i+1,False,cache)
-                else:
+                if(nums[i+1]>nums[i]):
                     p2 = 1 + recur(i+1,True,cache)
+                else:
+                    p2 = recur(i+1,False,cache)
                     
                     
             cache[i] = max(p1,p2)
