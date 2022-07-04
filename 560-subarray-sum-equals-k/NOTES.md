@@ -1,0 +1,1 @@
+Here we iterate through every cumulative sum upto that index and see if the sum-k is available as a prefix before so that we can remove it to form a subarray of sum k, if there are two prefixes like that then, two subarrays are possible, we increment our res, finally we add our current cumulative sum to hashmap.
