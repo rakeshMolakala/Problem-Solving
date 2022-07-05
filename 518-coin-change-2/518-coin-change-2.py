@@ -3,8 +3,8 @@ class Solution:
         
         
         def recur(i,target):
-            if(target==0):
-                return 1
+            # if(target==0):
+            #     return 1
             if(i==0):
                 if(target%coins[i]==0):
                     return 1
