@@ -3,30 +3,48 @@ class Solution:
         
         # this is equal to having two subsets one with negative signed ones and other with positive ones, we need the minus of these sum of subsets equal to target.
         
-        
-        def recur(i,tar):
-            
-            if(i==0):
-                if(tar==0 and nums[i]==0):
-                    return 2
-                if(tar==0 or tar-nums[i]==0):
+        def recur(i,temp_sum):
+            if(i==len(nums)):
+                if(temp_sum==target):
                     return 1
-                return 0
-            if((i,tar) in cache):
-                return cache[(i,tar)]
-            notTake = recur(i-1,tar)
-            take = 0
-            if(nums[i]<=tar):
-                take = recur(i-1,tar-nums[i])
-            res = take+notTake
-            cache[(i,tar)] = res 
+                else:
+                    return 0
+            if((i,temp_sum) in cache):
+                return cache[(i,temp_sum)]
+            p1 = recur(i+1,temp_sum+nums[i])
+            p2 = recur(i+1,temp_sum-nums[i])
+            res = p1+p2
+            cache[(i,temp_sum)] = res
             return res
         
-        total_sum = sum(nums)
-        new_target = (total_sum+target)/2
         cache = dict()
-        # find number of subsets with sum=new_target
-        return recur(len(nums)-1,new_target)
+        return recur(0,0)
+                
+        
+        
+#         def recur(i,tar):
+            
+#             if(i==0):
+#                 if(tar==0 and nums[i]==0):
+#                     return 2
+#                 if(tar==0 or tar-nums[i]==0):
+#                     return 1
+#                 return 0
+#             if((i,tar) in cache):
+#                 return cache[(i,tar)]
+#             notTake = recur(i-1,tar)
+#             take = 0
+#             if(nums[i]<=tar):
+#                 take = recur(i-1,tar-nums[i])
+#             res = take+notTake
+#             cache[(i,tar)] = res 
+#             return res
+        
+#         total_sum = sum(nums)
+#         new_target = (total_sum+target)/2
+#         cache = dict()
+#         # find number of subsets with sum=new_target
+#         return recur(len(nums)-1,new_target)
          
         
         
