@@ -13,15 +13,9 @@ class Solution:
                 else:
                     dp[i][j] = max(dp[i][j-1],dp[i-1][j])
         
-        
-        
+        # getting LCS string
         res=""
         while(m>0 and n>0):
-            # if(m>0 and n<=0):
-            #     res = str1[:m+1]+res
-            #     continue
-            # if(n>0 and m<=0):
-            #     res = str1[:n+1]+res
             if(str1[m-1]==str2[n-1]):
                 res = str1[m-1]+res
                 m-=1
@@ -30,6 +24,7 @@ class Solution:
                 m=m-1
             else:
                 n=n-1
+        
         
         i, j, k = [0, 0, 0]
         ans = ""
@@ -49,13 +44,8 @@ class Solution:
                 ans += str1[j] + str2[k]
                 j += 1
                 k += 1
-        while i < len(res):
-            ans += res[i]
-            i+=1
-        while j < len(str1):
-            ans += str1[j]
-            j+=1
-        while k < len(str2):
-            ans += str2[k]
-            k+=1
+        
+        ans = ans + res[i:]
+        ans = ans + str1[j:]
+        ans = ans + str2[k:]
         return ans
