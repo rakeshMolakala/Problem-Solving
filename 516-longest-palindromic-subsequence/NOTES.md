@@ -1,0 +1,1 @@
+t is the reverse of input string and the longest common subsequence of these two strings is the longest palindromic subsequence of the given string.
