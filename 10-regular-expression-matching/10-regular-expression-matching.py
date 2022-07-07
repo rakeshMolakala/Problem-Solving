@@ -5,11 +5,9 @@ class Solution:
             
             if(j<0 and i>=0):
                 return False
-            if(i==-1 and j==-1):
+            if(i<0 and j<0):
                 return True
             if(i<0 and j>=0):
-                # print("up")
-                # print(i,j)
                 temp = p[:j+1]
                 if(len(temp)%2!=0):
                     return False
@@ -27,18 +25,13 @@ class Solution:
                 res = recur(i-1,j-1)
             elif(p[j]=="*"):
                 prev = p[j-1]
-                # print("new")
-                # print(i,j)
                 p1 = recur(i,j-2)
-                
                 p2 = False
                 if(prev==s[i] or prev=="."):
-                    
                     p2 = recur(i-1,j)
                 res = p1 or p2
             cache[(i,j)] = res
             return res
-        
         
     
         cache = dict()
