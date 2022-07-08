@@ -19,13 +19,13 @@ class Solution:
             res = 0
             if(buy):
                 # will buy
-                p1 = -prices[i] + recur(i+1,False,number+1)
+                p1 = -prices[i] + recur(i+1,False,number)
                 # not buy
                 p2 = recur(i+1,True,number)
                 res = max(p1,p2)
             else:
                 # will sell
-                p1 = prices[i] + recur(i+1,True,number)
+                p1 = prices[i] + recur(i+1,True,number+1)
                 # not sell
                 p2 = recur(i+1,False,number)
                 res = max(p1,p2)
