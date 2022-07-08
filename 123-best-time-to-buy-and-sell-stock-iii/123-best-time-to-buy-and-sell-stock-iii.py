@@ -10,7 +10,7 @@ class Solution:
                 else:
                     return prices[i]
                 
-            if(buy and number==2):
+            if(number==2):
                 return 0
             
             if((i,buy,number) in cache):
