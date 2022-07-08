@@ -36,23 +36,43 @@ class Solution:
 #         return recur(0,True) 
     
         # Bottom up
+#         n = len(prices)
+#         dp = [[0]*2 for _ in range(n)]
+#         dp[n-1][1] = 0
+#         dp[n-1][0] = prices[n-1]
+        
+#         for i in range(n-2,-1,-1):
+#             for j in range(2):
+#                 if(j==1):
+#                     p1 = -prices[i] + dp[i+1][0]
+#                     p2 = dp[i+1][1]
+#                     dp[i][j] = max(p1,p2)
+#                 else:
+#                     p1 = prices[i] + dp[i+1][1]
+#                     p2 = dp[i+1][0]
+#                     dp[i][j] = max(p1,p2)
+    
+#         return dp[0][1]
+    
+        # Space optimized
         n = len(prices)
-        dp = [[0]*2 for _ in range(n)]
-        dp[n-1][1] = 0
-        dp[n-1][0] = prices[n-1]
+        
+        nextt = [prices[n-1],0]
+        curr = [None,None]
         
         for i in range(n-2,-1,-1):
             for j in range(2):
                 if(j==1):
-                    p1 = -prices[i] + dp[i+1][0]
-                    p2 = dp[i+1][1]
-                    dp[i][j] = max(p1,p2)
+                    p1 = -prices[i] + nextt[0]
+                    p2 = nextt[1]
+                    curr[j] = max(p1,p2)
                 else:
-                    p1 = prices[i] + dp[i+1][1]
-                    p2 = dp[i+1][0]
-                    dp[i][j] = max(p1,p2)
-    
-        return dp[0][1]
+                    p1 = prices[i] + nextt[1]
+                    p2 = nextt[0]
+                    curr[j] = max(p1,p2)
+                    
+            nextt = curr.copy()
+        return nextt[1]
         
         
         
