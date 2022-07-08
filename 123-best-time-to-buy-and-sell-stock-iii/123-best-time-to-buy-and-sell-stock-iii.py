@@ -9,17 +9,20 @@ class Solution:
                     return 0
                 else:
                     return prices[i]
+                
+            if(buy and number==2):
+                return 0
+            
             if((i,buy,number) in cache):
                 return cache[(i,buy,number)]
             
             res = 0
             if(buy):
-                if(number<2):
-                    # will buy
-                    p1 = -prices[i] + recur(i+1,False,number+1)
-                    # not buy
-                    p2 = recur(i+1,True,number)
-                    res = max(p1,p2)
+                # will buy
+                p1 = -prices[i] + recur(i+1,False,number+1)
+                # not buy
+                p2 = recur(i+1,True,number)
+                res = max(p1,p2)
             else:
                 # will sell
                 p1 = prices[i] + recur(i+1,True,number)
