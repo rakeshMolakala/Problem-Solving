@@ -1,7 +1,6 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        
-        # Top down
+        #Top down
 #         def recur(i,buy):
             
 #             if(i==len(prices)-1):
@@ -35,7 +34,7 @@ class Solution:
 #         cache = dict()
 #         return recur(0,True) 
     
-        # Bottom up
+#         Bottom up
 #         n = len(prices)
 #         dp = [[0]*2 for _ in range(n)]
 #         dp[n-1][1] = 0
