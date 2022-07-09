@@ -1,1 +1,3 @@
+Here we generally carry out LIS method and also maintain a count list that stores the number of LIS that have length dp[i], so when calculating if we get a increase in dp[i] which means the increase in LIS, we assign the number of LIS as the number of LIS of previous element J, but after that if we get the same LIS again from other elements, we add their counts to our present count.
 ​
+Finally , we check the counts of all LIS
