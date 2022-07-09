@@ -7,8 +7,8 @@ class Solution:
             oneViolation = False
             if(p2-p1!=1):
                 return False
-            while(p1>=0 or p2>=0):
-                if(p1>=0 and s2[p2]==s1[p1]):
+            while(p1>=0 and p2>=0):
+                if(s2[p2]==s1[p1]):
                     p1=p1-1
                     p2=p2-1
                 else:
@@ -16,9 +16,7 @@ class Solution:
                         return False
                     p2=p2-1
                     oneViolation = True
-            if(p1==-1 and p2==-1):
-                return True
-            return False
+            return True
             
         words = sorted(words,key=len)
         n = len(words)
