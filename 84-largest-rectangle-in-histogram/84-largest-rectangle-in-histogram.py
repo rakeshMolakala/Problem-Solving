@@ -4,7 +4,6 @@ class Solution:
         st.append(0)
         n = len(heights)
         res = 0
-        leftSmaller = [0]*n
         for i in range(1,n):
             rs = i-1
             while(len(st)>0 and heights[st[-1]]>=heights[i]):
