@@ -7,6 +7,8 @@ class Solution:
         r =0
         while(r<len(s)):
             count[s[r]] = 1 + count.get(s[r],0)
+            
+            # if window is not valid we keep reducing the window size till we get valid one
             while((r-l+1) - max(count.values())>k):
                 count[s[l]]-=1
                 l=l+1
