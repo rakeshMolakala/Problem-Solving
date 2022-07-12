@@ -10,9 +10,7 @@ class Solution:
         def recur(root):
             if(not root):
                 return 
-            temp = root.left
-            root.left = root.right
-            root.right = temp
+            root.left, root.right = root.right, root.left
             recur(root.left)
             recur(root.right)
         
