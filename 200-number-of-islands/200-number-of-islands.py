@@ -10,7 +10,7 @@ class Solution:
             q = collections.deque()
             q.append((i,j))
             while(q):
-                r,c = q.popleft()
+                r,c = q.pop()
                 direc = [[0,1],[1,0],[-1,0],[0,-1]]
                 for x,y in direc:
                     tr = r+x
