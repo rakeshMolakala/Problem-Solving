@@ -11,11 +11,8 @@ class DoublyLL:
         self.tail = LinkedNode(0,0)
         self.head.next = self.tail
         self.tail.prev = self.head
-        self.size = 0
     
     def moveNodeToFront(self,node):
-        # if(self.size==0):
-        #     return
         prevNode = node.prev
         nextNode = node.next
         nextNode.prev = prevNode
@@ -31,16 +28,12 @@ class DoublyLL:
         node.prev = self.head
         node.next = temp1
         temp1.prev = node
-        self.size+=1
         
     def deleteLastNode(self):
-        # if(self.size==0):
-        #     return
         temp = self.tail.prev
         temp2 = temp.prev
         temp2.next = self.tail
         self.tail.prev = temp2
-        self.size-=1
         
     def getLastNodeKey(self):
         return self.tail.prev.key
