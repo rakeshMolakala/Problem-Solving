@@ -14,7 +14,7 @@ class Solution:
                 return grid[n-1][n-1]
             
             res = grid[i1][j1]
-            if (j1!=j2):
+            if (j1!=j2 and i1!=i2):
                 res = res + grid[i2][j2]
             
             res = res + max(recur(i1+1,j1,j2),recur(i1+1,j1,j2+1),recur(i1,j1+1,j2),recur(i1,j1+1,j2+1))
