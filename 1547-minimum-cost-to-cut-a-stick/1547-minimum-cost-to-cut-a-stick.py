@@ -2,7 +2,7 @@ class Solution:
     def minCost(self, n: int, cuts: List[int]) -> int:
         
         def recur(i,j):
-            if(i==j-1 or i==j):
+            if(i==j-1 ):
                 return 0
             if((i,j) in cache):
                 return cache[(i,j)]
