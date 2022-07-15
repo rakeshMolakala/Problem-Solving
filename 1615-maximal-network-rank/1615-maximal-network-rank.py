@@ -4,7 +4,6 @@ class Solution:
         for road in roads:
             g[road[0]].append(road[1])
             g[road[1]].append(road[0])
-        print(g)
         
         maxi = 0
         for i in range(n):
