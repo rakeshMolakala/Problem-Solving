@@ -2,12 +2,11 @@ class Solution:
     def rob(self, nums: List[int]) -> int:
         
         
-        ## recur(i) represents the maximum wealth possible from considering the house at index i
+        ## recur(i) represents the maximum wealth possible when robber from the house at index i
         
         def recur(i):
             if(i in cache):
                 return cache[i]
-            
             if(i>=len(nums)):
                 return 0
             
@@ -23,4 +22,8 @@ class Solution:
         
         cache = dict()
         return recur(0)
-        
+
+    
+    
+    
+   
