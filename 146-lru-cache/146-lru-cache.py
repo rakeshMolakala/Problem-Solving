@@ -121,6 +121,7 @@ class LRUCache:
         node.prev = self.head
         
     def remove(self,node):
+        # removing the last node to right, which is attached left to tail
         self.dic.pop(node.key)
         prevNode = node.prev
         nextNode = node.next
