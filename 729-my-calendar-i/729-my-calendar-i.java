@@ -8,10 +8,6 @@ class MyCalendar {
     public boolean book(int start, int end) {
         Integer next = calen.ceilingKey(start);
         Integer prev = calen.floorKey(start);
-        // if(next==null && prev==null){
-        //     calen.put(start,end);
-        //     return true;
-        // }
         boolean valid = true;
         if(prev!=null){
             int prevEnd = calen.get(prev);
