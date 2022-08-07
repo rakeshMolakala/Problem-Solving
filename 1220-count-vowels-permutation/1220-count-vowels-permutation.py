@@ -1,8 +1,7 @@
 class Solution:
     def countVowelPermutation(self, n: int) -> int:
         
-        # Top down recursion approach
-        temp = ['a','e','i','o','u']
+        #Top down recursion approach
         dic = {"":['a','e','i','o','u'],'a':['e'],'e':['a','i'],'i':['a','e','o','u'],'o':['u','i'],'u':['a']}
         cache = dict()
         cons = 1000000007
@@ -23,11 +22,22 @@ class Solution:
         return recur("",n)
     
         
-        # Bottom up approach
+#         # Bottom up approach
+#         dic = {0:[1,2,3,4,5],1:[2],2:[1,3],3:[1,2,4,5],4:[3,5],5:[1]} 
+#         cons = 1000000007
+#         dp = [[0 for _ in range(n+1)] for _ in range(6)]
+#         for i in range(0,6):
+#             dp[i][0] = 1
+#         for i in range(0,6):
+#             for j in range(1,n+1):
+#                 temp_ans = 0
+#                 for c in dic[i]:
+#                     dp[i][j] = dp[i][j] + dp[c][j-1]
+#                 dp[i][j] = dp[i][j] % cons
+#         print(dp)
+#         return 4
+                
         
         
-                
-                
-            
-                
+        
         
