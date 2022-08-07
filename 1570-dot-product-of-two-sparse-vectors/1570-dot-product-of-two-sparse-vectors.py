@@ -9,6 +9,8 @@ class SparseVector:
     # Return the dotProduct of two sparse vectors
     def dotProduct(self, vec: 'SparseVector') -> int:
         res = 0
+        if(len(self.dic)>len(vec.dic)):
+            return vec.dotProduct(self)
         for index in self.dic.keys():
             if(index in vec.dic):
                 res = res + self.dic[index] * vec.dic[index]
