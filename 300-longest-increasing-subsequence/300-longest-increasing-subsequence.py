@@ -1,5 +1,21 @@
 class Solution:
     def lengthOfLIS(self, nums: List[int]) -> int:
+        # easy understadning dp bottom up solution
+        # dp[i] represents the length of LIS that ends ith position, by including the ith element.
+        n = len(nums)
+        ans = 1
+        dp = [1]*n
+        for i in range(1,n):
+            for j in range(i):
+                if(nums[j]<nums[i]):
+                    dp[i] = max(dp[i],1+dp[j])
+            ans = max(ans,dp[i])
+        return ans
+        
+        
+        
+        
+        
 #         n = len(nums)
         
 #         def recur(i,prev):
@@ -53,15 +69,47 @@ class Solution:
     
     
         # easy understadning dp bottom up solution
-        n = len(nums)
-        dp = [1]*n
-        ans = 1
-        for i in range(1,n):
-            for j in range(i):
-                if(nums[i]>nums[j]):
-                    dp[i] = max(dp[i],dp[j]+1)
-            ans = max(ans, dp[i])
-        return ans
+        # dp[i] represents the length of LIS that ends ith position, by including the ith element.
+        # n = len(nums)
+        # dp = [1]*n
+        # ans = 1
+        # for i in range(1,n):
+        #     for j in range(i):
+        #         if(nums[i]>nums[j]):
+        #             dp[i] = max(dp[i],dp[j]+1)
+        #     ans = max(ans, dp[i])
+        # return ans
+        
+        
+        # printing LCS
+#         n = len(nums)
+#         dp = [1]*n
+#         track = [0]*n
+#         last_index = 0
+#         ans = 1
+#         for i in range(1,n):
+#             track[i] = i
+#             for j in range(i):
+#                 if(nums[i]>nums[j] and dp[i]<dp[j]+1):
+#                     dp[i] = dp[j]+1
+#                     track[i] = j
+                    
+#             if(dp[i]>ans):
+#                 ans = dp[i]
+#                 last_index = i
+            
+#         res = []
+#         prev_last_index = -1
+#         while(True):
+#             if(last_index==prev_last_index):
+#                 break
+#             res.append(nums[last_index])
+#             prev_last_index = last_index
+#             last_index = track[last_index]
+#         res=res[::-1]
+#         print(res)
+        
+#         return ans
                 
         
     
