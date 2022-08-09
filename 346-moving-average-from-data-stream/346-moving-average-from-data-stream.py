@@ -15,12 +15,6 @@ class MovingAverage:
             self.size += 1
         self.sum = self.sum - pop + val
         self.q.append(val)
-            
-#         else:
-#             self.q.append(val)
-#             self.sum = self.sum + val
-#             self.cap-=1
-            # self.size += 1
         return self.sum/self.size
         
 
