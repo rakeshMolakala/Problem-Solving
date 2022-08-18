@@ -2,10 +2,9 @@ import heapq
 class Solution:
     def minSetSize(self, arr: List[int]) -> int:
         track = collections.defaultdict(int)
-        n = len(arr)
         for x in arr:
             track[x] = track[x] + 1
-        min_remove = n//2
+        min_remove = len(arr)//2
         pq = []
         for k,v in track.items():
             pq.append((-v,k))
