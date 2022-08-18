@@ -7,11 +7,11 @@ class Solution:
         min_remove = len(arr)//2
         pq = []
         for k,v in track.items():
-            pq.append((-v,k))
+            pq.append(-v)
         res = 0
         heapq.heapify(pq)
         while(min_remove>0):
-            val,key = heapq.heappop(pq)
+            val = heapq.heappop(pq)
             min_remove-=-val
             res+=1
         return res
