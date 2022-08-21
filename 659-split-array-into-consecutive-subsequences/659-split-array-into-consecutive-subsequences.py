@@ -9,7 +9,6 @@ class Solution:
                 if(length<3):
                     return False
                 
-            
             if(len(heap)==0 or nums[i]==heap[0][0]):
                 heapq.heappush(heap,(nums[i],1))
                 
@@ -18,7 +17,6 @@ class Solution:
                 heapq.heappop(heap)
                 heapq.heappush(heap,(nums[i],length+1))
     
-                
         for sub in heap:
             if(sub[1]<3):
                 return False
