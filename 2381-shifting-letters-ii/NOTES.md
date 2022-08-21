@@ -1,0 +1,1 @@
+refer notes on aug 20 for explanation
