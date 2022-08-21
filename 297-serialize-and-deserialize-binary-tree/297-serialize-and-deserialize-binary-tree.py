@@ -35,10 +35,10 @@ class Codec:
         index = 0
         while(q):
             curr = q.popleft()
-            if(index+1<n and lis[index+1]!='None'):
+            if(lis[index+1]!='None'):
                 curr.left = TreeNode(lis[index+1])
                 q.append(curr.left)
-            if(index+2<n and lis[index+2]!='None'):
+            if(lis[index+2]!='None'):
                 curr.right = TreeNode(lis[index+2])
                 q.append(curr.right)
             index=index+2
