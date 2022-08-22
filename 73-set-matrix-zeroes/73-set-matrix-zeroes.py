@@ -12,13 +12,10 @@ class Solution:
                     rows.add(i)
                     cols.add(j)
                     
-        for i in rows:
+        for i in range(r):
             for j in range(c):
-                matrix[i][j]=0
-        
-        for j in cols:
-            for i in range(r):
-                matrix[i][j]=0
-            
+                if i in rows or j in cols: 
+                    matrix[i][j]=0
+
             
         
