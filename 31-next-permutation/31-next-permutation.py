@@ -2,7 +2,7 @@ class Solution:
     def nextPermutation(self, nums: List[int]) -> None:
         n = len(nums)
         p1 = -1
-        
+        # watch strivers video
         for i in range(n-2,-1,-1):
             if(nums[i]<nums[i+1]):
                 p1 = i
@@ -30,18 +30,9 @@ class Solution:
         
         
         
+
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
- 
         
         
         
