@@ -1,1 +1,1 @@
-​
+Because here the sorting is the main key, that too with the start tim of each interval. It is because after sorting, if you find out that next element is not overlapping with last element in result array, then there will not be any interval after this that can merge with the last interval in result.
