@@ -10,3 +10,5 @@ so for a index number k,
 row index = k//cols
 col index = k%cols
 ​
+TC = O(log(m+n))
+SC = O(1)
