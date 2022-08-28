@@ -3,10 +3,7 @@ class Solution:
         n = len(nums)
         temp = [0]*n
         return self.mergeSort(nums,0,n-1,temp)
-#         print(self.merge([1,3,1,2,3],0,2,4,temp))
-#         return 4
-        
-        
+
     def mergeSort(self,nums,low,high,temp):
         mid = (low+high)//2
         rev_count = 0
@@ -19,7 +16,6 @@ class Solution:
         return rev_count
             
         
-        
     def merge(self, nums, low,rightStart,high,temp):
         i = low
         j = rightStart
@@ -27,16 +23,21 @@ class Solution:
         rev_count = 0
         
         # calculating reverse pairs
-
-        while(i<=rightStart-1):
-            if(j>high):
-                rev_count = rev_count + j - rightStart
-                i+=1
-            elif(nums[i]<=2*nums[j]):
-                rev_count = rev_count + j - rightStart
-                i+=1
-            else:
+        
+        for left_i in range(i,rightStart):
+            while(j<=high and nums[left_i]>2*nums[j]):
                 j+=1
+            rev_count = rev_count + j - rightStart
+
+        # while(i<=rightStart-1):
+        #     if(j>high):
+        #         rev_count = rev_count + j - rightStart
+        #         i+=1
+        #     elif(nums[i]<=2*nums[j]):
+        #         rev_count = rev_count + j - rightStart
+        #         i+=1
+        #     else:
+        #         j+=1
         
         i = low
         j = rightStart
@@ -73,6 +74,4 @@ class Solution:
         
         
         
-        
-                    
-                    
+               
