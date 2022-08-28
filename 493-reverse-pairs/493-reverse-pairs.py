@@ -29,6 +29,8 @@ class Solution:
                 j+=1
             rev_count = rev_count + j - rightStart
 
+        # this also works
+        
         # while(i<=rightStart-1):
         #     if(j>high):
         #         rev_count = rev_count + j - rightStart
