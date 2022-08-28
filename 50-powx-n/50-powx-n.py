@@ -5,7 +5,6 @@ class Solution:
             n=-n
             isNeg = True
         
-        
         def recur(x,n):
             if n==0:
                 return 1
