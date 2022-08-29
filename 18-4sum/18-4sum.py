@@ -34,5 +34,4 @@ class Solution:
             while(i<n and prevI==nums[i]):
                 i+=1
                 
-                
         return res
