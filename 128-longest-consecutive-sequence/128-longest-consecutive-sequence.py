@@ -1,9 +1,9 @@
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
-        track = dict()
+        track = set()
         n = len(nums)
         for i in range(n):
-            track[nums[i]] = i
+            track.add(nums[i])
         visited = set()
              
         res = 0
