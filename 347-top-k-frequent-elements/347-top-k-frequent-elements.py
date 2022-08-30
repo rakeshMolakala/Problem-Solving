@@ -2,6 +2,7 @@ import heapq
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         
+        # first approach using heaps
         track = collections.defaultdict(int)
         for num in nums:
             track[num]+=1
@@ -12,32 +13,13 @@ class Solution:
         heapq.heapify(heap)
         
         res = []
-        
         for i in range(k):
             value,key = heapq.heappop(heap)
             res.append(key)
         return res
             
-        
-        
-        # ## Klog(n) solution
-        # if(k==len(nums)):
-        #     return nums
-        # track=dict()
-        # for x in nums:
-        #     if x in track:
-        #         track[x]=track[x]+1
-        #     else:
-        #         track[x]=1
-        # heapq.heapify(nums)
-        # values_keys = zip(track.values(), track.keys())
-        # res=[]
-        # for v,k in heapq.nlargest(k,values_keys):
-        #     res.append(k)
-        # return res
-    
-    
-        ## Bucket sort technique - O(n) solution
+       
+        # Second approach usign Bucket sort technique - O(n) solution
 #         if(k==len(nums)):
 #             return nums
 #         track=dict()
