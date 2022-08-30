@@ -1,17 +1,12 @@
-from collections import defaultdict
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        
-        track = defaultdict(list)
-        
+        track = collections.defaultdict(list)
         for s in strs:
-            count = [0]*26
+            temp = [0]*26
             for c in s:
                 index = ord(c) - ord('a')
-                count[index] +=1
-            track[tuple(count)].append(s)
+                temp[index]+=1
+            track[tuple(temp)].append(s)
         
         return track.values()
-                
-        
         
