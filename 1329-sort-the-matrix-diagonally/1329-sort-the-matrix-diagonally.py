@@ -9,7 +9,7 @@ class Solution:
             for j in range(cols):
                 hmap[i-j].append(mat[i][j])
                 
-        for key,val in hmap.items():
+        for val in hmap.values():
             heapq.heapify(val)
             
         for i in range(rows):
