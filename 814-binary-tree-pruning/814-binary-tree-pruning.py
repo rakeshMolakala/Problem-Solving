@@ -17,10 +17,9 @@ class Solution:
                 root.left = None
             if not right:
                 root.right = None
-            if (root.left or root.right) and root.val==0:
-                return True
-            if root.val==1:
-                return True
+            if root.val==0 and not root.left and not root.right:
+                return False
+            return True
             
         postOrder(root)
         if root.val==0 and not root.left and not root.right:
