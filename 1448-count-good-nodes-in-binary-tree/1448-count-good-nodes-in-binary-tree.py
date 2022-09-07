@@ -6,17 +6,17 @@
 #         self.right = right
 class Solution:
     def goodNodes(self, root: TreeNode) -> int:
-        global res
-        res = 0
+    
         
-        def preOrder(root,maxi):
+        def preOrder(root,maxi,res):
             if root:
-                global res
                 if root.val>=maxi:
                     res+=1
-                preOrder(root.left,max(maxi,root.val))
-                preOrder(root.right,max(maxi,root.val))
+                left = preOrder(root.left,max(maxi,root.val),0) 
+                right = preOrder(root.right,max(maxi,root.val),0)
+                return res + left + right
+            else:
+                return 0
         
-        preOrder(root,-math.inf)
-        return res
+        return preOrder(root,-math.inf,0)
             
