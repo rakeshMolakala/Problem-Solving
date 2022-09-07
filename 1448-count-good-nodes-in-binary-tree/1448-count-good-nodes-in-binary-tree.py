@@ -13,7 +13,6 @@ class Solution:
             if root:
                 global res
                 if root.val>=maxi:
-                    print()
                     res+=1
                 preOrder(root.left,max(maxi,root.val))
                 preOrder(root.right,max(maxi,root.val))
