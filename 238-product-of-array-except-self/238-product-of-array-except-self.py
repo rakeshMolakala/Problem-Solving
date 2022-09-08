@@ -1,5 +1,6 @@
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
+        # Second approach
         # TC-O(n) SC-O(1)
         n = len(nums)
         res = [1]*n
@@ -15,6 +16,7 @@ class Solution:
         return res
         
         
+        # First approach
           # TC - O(n) and SC - O(n)
 #         n = len(nums)
 #         prefix = [1]*n
