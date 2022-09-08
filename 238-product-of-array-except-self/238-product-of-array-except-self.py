@@ -1,5 +1,6 @@
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
+        # TC-O(n) SC-O(1)
         n = len(nums)
         res = [1]*n
         
@@ -12,14 +13,6 @@ class Solution:
             right_product = right_product*nums[i]
         
         return res
-            
-        
-        
-        
-        
-        
-        
-        
         
         
           # TC - O(n) and SC - O(n)
