@@ -10,8 +10,7 @@ class Solution:
         res = 0
         dic = collections.defaultdict(int)
         self.preOrder(root,dic)
-        return res
-        
+        return res 
         
     def preOrder(self,root,dic):
         if root:
