@@ -1,25 +1,37 @@
 class Solution:
     def findOriginalArray(self, changed: List[int]) -> List[int]:
         n = len(changed)
-        
-        if n % 2 != 0:
+        if n%2!=0:
             return []
         
-        hash_map = Counter(changed)
-        ans = []
-        changed.sort()
+        res =[]
         
-        for i in changed:
-            if hash_map[i] == 0:
-                continue
-            else:
-                hash_map[i] -= 1
-            element = 2*i
-            if element in hash_map and hash_map[element] > 0:
-                ans.append(i)
-                hash_map[element] -= 1
+        track = collections.defaultdict(int)
+        for num in changed:
+            track[num]+=1
+            
+        for num in sorted(track.keys()):
+            if track[num]>0:
+                
+                if num==0:
+                    count = track[num]
+                    if count%2!=0:
+                        return []
+                    res = res + [0]*(count//2)
+                    track[num] = track[num] - count
+                
+                elif 2*num in track:
+                    count = track[num]
+                    double_count = track[2*num]
+                    if double_count<count:
+                        return []
+                    res = res + [num]*(count)
+                    track[num] = track[num] - count
+                    track[2*num] = track[2*num] - count
+                    
+                else:
+                    return []
         
-        if len(ans) == n // 2:
-            return ans
-        else:
-            return []
+        if len(res)==n//2:
+            return res
+        return []
