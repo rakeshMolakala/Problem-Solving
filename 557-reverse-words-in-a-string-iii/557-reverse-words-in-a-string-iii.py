@@ -3,11 +3,12 @@ class Solution:
         temp = ""
         res = ""
         for c in s:
-            if c!=" ":
-                temp = c+temp
-            else:
-                res = res+" "+temp
+            if c==" ":
+                res = res +temp+" "
                 temp = ""
-        res = res + " " +temp
-        return res[1:]
+            else:
+                temp = c+temp
+
+        res = res + temp
+        return res
         
