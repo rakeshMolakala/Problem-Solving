@@ -3,10 +3,11 @@ class MyCircularQueue {
     int[] q;
     int front;
     int rear;
-    int size = 0;
+    int size;
 
     public MyCircularQueue(int k) {
         this.q = new int[k];
+        size = 0;
         Arrays.fill(q,-1);
     }
     
